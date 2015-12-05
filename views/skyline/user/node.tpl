@@ -1,63 +1,66 @@
 {include file='user/main.tpl'}
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="container" style="margin-top: 50px;">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="page-header">
         <h1>
             节点列表
             <small>Node List</small>
         </h1>
-    </section>
+    </div>
 
-    <!-- Main content -->
-    <section class="content">
-        <!-- START PROGRESS BARS -->
         <div class="row">
-            <div class="col-md-8">
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-th-list"></i>
-                        <h3 class="box-title">节点</h3>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-tasks"  style="font-size: 20px;"></span>
+                        <h3 style="display:inline;">节点</h3>
                     </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="callout callout-warning">
+                    <div class="panel-body">
+                        <div class="alert alert-info alert-dismissable">
                             <h4>注意!</h4>
                             <p>请勿在任何地方公开节点地址！</p>
-                        </div>
+                        </div> 
+
+
                         {foreach $nodes as $node}
-                        <div class="nav-tabs-custom">
-                            <ul class="nav nav-tabs pull-right">
-                                <li>
-                                    <a   href="./node/{$node->id}">
-                                        查看配置文件/二维码
-                                    </a>
-                                </li>
-                                <li class="pull-left header"><i class="fa fa-angle-right"></i> {$node->name}</li>
-                            </ul>
-                            <div class="tab-content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-md-10" style="">
+                                         <i class="fa fa-angle-right"></i> {$node->name}
+                                    </div>
+                                    <div class="col-md-2 pull-right">
+                                        <a   href="./node/{$node->id}">
+                                                查看配置文件/二维码
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
                                 <div class="tab-pane active" id="tab_1-1">
-                                    <p> <a class="btn btn-xs bg-purple btn-flat margin" href="#">地址:</a> <code>{$node->server}</code>
-                                        <a class="btn btn-xs bg-orange btn-flat margin" href="#">{$node->status}</a>
-                                        <a class="btn btn-xs bg-green btn-flat margin" href="#">{$node->method}</a>
+                                    <p> <a class="label label-primary margin" href="#">地址:</a> <code>{$node->server}</code> </p>
+                                    <p>
+                                        <a class="label label-success margin" href="#">{$node->status}</a>
+                                        <a class="label label-info margin" href="#">{$node->method}</a>
                                     </p>
-                                    <p> {$node->info}</p>
+                                    <p style="padding-left: 10px;"> {$node->info}</p>
                                 </div><!-- /.tab-pane -->
                             </div><!-- /.tab-content -->
+
                         </div><!-- nav-tabs-custom -->
                         {/foreach}
-                    </div><!-- /.box-body -->
 
+
+                    </div><!-- /.box-body -->
 
                 </div><!-- /.box -->
             </div><!-- /.col (left) -->
 
-            <div class="col-md-4">
-            </div><!-- /.col (right) -->
-
         </div><!-- /.row -->
         <!-- END PROGRESS BARS -->
-    </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
 

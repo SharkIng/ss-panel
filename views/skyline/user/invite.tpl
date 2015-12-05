@@ -1,27 +1,26 @@
 {include file='user/main.tpl'}
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="container" style="margin-top: 50px;">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="page-header">
         <h1>
             邀请
             <small>Invite</small>
         </h1>
-    </section>
+    </div>
 
     <!-- Main content -->
     <!-- Main content -->
-    <section class="content">
         <div class="row">
             <!-- left column -->
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title">邀请</h3>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 style="display: inline;">邀请</h3>
                     </div><!-- /.box-header -->
-                    <div class="box-body">
+                    <div class="panel-body">
                         <p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。  </p>
                         {if $user->invite_num }
                         <button id="invite" class="btn btn-sm btn-info">生成我的邀请码</button>
@@ -35,7 +34,7 @@
                     </div><!-- /.box -->
 
                     <div class="box-header">
-                        <h3 class="box-title">我的邀请码</h3>
+                        <h3 style="display: inline; padding-left: 10px;">我的邀请码</h3>
                     </div><!-- /.box-header -->
 
                     <div class="table-responsive">
@@ -62,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="box box-solid">
                     <div class="box-body">
 
@@ -83,7 +82,6 @@
                 </div><!-- /.box -->
             </div><!-- /.col (right) -->
         </div>
-    </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
 <script>

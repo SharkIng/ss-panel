@@ -1,26 +1,26 @@
 {include file='user/main.tpl'}
 
-<div class="content-wrapper">
-    <section class="content-header">
+<div class="container" style="margin-top: 50px;">
+    <div class="page-header">
         <h1>
             统计信息
-            <small>A</small>
+            <small>Analysis Information</small>
         </h1>
-    </section>
+    </div>
     <!-- Main content -->
+
+
     <!-- Main content -->
-    <section class="content">
         <div class="row">
             <!-- left column -->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <!-- general form elements -->
-                <div class="box box-primary">
-                    <div class="box-body">
+                <div class="panel panel-default">
+                        <div class="panel-body">
                         <p>Coming soon...</p>
                     </div><!-- /.box -->
                 </div>
             </div>
         </div>
-    </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 {include file='user/footer.tpl'}

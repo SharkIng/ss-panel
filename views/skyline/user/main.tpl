@@ -11,7 +11,7 @@
     <!-- Ionicons -->
     <link href="//code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="/assets/public/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+<!--     <link href="/assets/public/css/AdminLTE.min.css" rel="stylesheet" type="text/css" /> -->
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="/assets/public/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
@@ -26,111 +26,94 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="skin-blue">
-<!-- Site wrapper -->
-<div class="wrapper">
 
-    <header class="main-header">
-        <a href="/user" class="logo">{$config["appName"]}</a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{$user->gravatar}" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs">{$user->name}</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="{$user->gravatar}" class="img-circle" alt="User Image" />
-                                <p>
-                                    {$user->email}
-                                    <small>加入时间：{$user->t}</small>
-                                </p>
-                            </li>
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="/user/profile" class="btn btn-default btn-flat">个人信息</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="/user/logout" class="btn btn-default btn-flat">退出</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<body>
 
-    <!-- =============================================== -->
-
-    <!-- Left side column. contains the sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{$user->gravatar}" class="img-circle" alt="User Image" />
+<div id="container">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: rgba(255,255, 255, 0.85);box-shadow: 5px 10px 15px 5px rgba(0,0,0,.1);">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/user"><h3>{$config["appName"]}<h3></a>
                 </div>
-                <div class="pull-left info">
-                    <p>{$user->name}</p>
 
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a  href="/user" data-toggle="tooltip" data-placement="auto" title="总控">
+                                <span class="glyphicon glyphicon-cloud" style="font-size: 25px;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="/user/node" data-toggle="tooltip" data-placement="auto" title="节点">
+                                <span class="glyphicon glyphicon-tasks"  style="font-size: 25px;"></a>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/user/invite" data-toggle="tooltip" data-placement="auto" title="邀请">
+                                <span class="glyphicon glyphicon-envelope"  style="font-size: 25px;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="auto" title="支付">
+                                <span class="glyphicon glyphicon-shopping-cart"  style="font-size: 25px;"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="tooltip" data-placement="auto" title="客服">
+                                <span class="glyphicon glyphicon-send"  style="font-size: 25px;"></span>
+                            </a>
+                        </li>
+                       <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <div class="panel panel-default" style="width: 300px; border: none; box-shadow: none;">
+                                    <div class="panel panel-heading" style="box-align: center; border: none; box-shadow: none;">
+                                        <img src="{$user->gravatar}" class="img-circle" style="margin-left: 95px;" alt="User Image" />
+                                    </div>
+                                    <div class="panel panel-body">
+                                        <p style="text-align: center;"><span class="hidden-xs">{$user->name}</span></p>
+                                        <p style="text-align: center;">{$user->email}</p>
+                                        <p style="text-align: center;"><small>加入时间：{$user->t}</small></p>
+                                        </br>
+                                        <div class="pull-left">
+                                            <a href="/user/profile" class="btn btn-default btn-flat">个人信息</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="/user/edit" class="btn btn-default btn-flat">编辑资料</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+<!--                         <li>
+                            <a href="/user/edit" data-toggle="tooltip" data-placement="auto" title="管理">
+                                <span class="glyphicon glyphicon-cog"  style="font-size: 25px;"></span>
+                            </a>-->
+                        <li>
+                            <a href="/user/logout" data-toggle="tooltip" data-placement="auto" title="登出">
+                                <span class="glyphicon glyphicon-off"  style="font-size: 25px;"></span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
+        </div>
+    </nav>
+</div>
 
-            <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu">
-                <li>
-                    <a href="/user">
-                        <i class="fa fa-dashboard"></i> <span>用户中心</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/user/node">
-                        <i class="fa fa-sitemap"></i> <span>节点列表</span>
-                    </a>
-                </li>
-
-                <li >
-                    <a href="/user/profile">
-                        <i class="fa fa-user"></i> <span>我的信息</span>
-                    </a>
-                </li>
+<div id="header"></div>
 
 
-                <li >
-                    <a href="/user/edit">
-                        <i class="fa  fa-pencil"></i> <span>修改资料</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="/user/invite">
-                        <i class="fa fa-users"></i> <span>邀请好友</span>
-                    </a>
-                </li>
 
-                <li  >
-                    <a href="/user/sys">
-                        <i class="fa fa-align-left"></i> <span>系统信息</span>
-                    </a>
-                </li>
-
-            </ul>
-        </section>
-        <!-- /.sidebar -->
-    </aside>

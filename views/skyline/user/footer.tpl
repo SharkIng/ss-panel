@@ -1,11 +1,6 @@
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        Made with Love
-    </div>
-    <strong>Copyright &copy; 2015 <a href="#">{$config['appName']}</a> </strong>
-    All rights reserved.  Powered by  <b>ss-panel</b>{$config['version']} | <a href="/tos">服务条款  </a>
-</footer>
-</div><!-- ./wrapper -->
+<div id="footer" style="border-top: 1px solid #eee;padding: 10px;">
+    <div style="text-align: center;color: #696969;">Copyright © 2014-2015 {$config["appName"]}, All Rights Reserved.</div>
+</div>
 
 
 <!-- Bootstrap 3.3.2 JS -->

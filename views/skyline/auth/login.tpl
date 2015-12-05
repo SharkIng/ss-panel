@@ -32,7 +32,7 @@
                 <button id="login" type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
             </div><!-- /.col -->
         </div>
-
+        </br>
         <div id="msg-success" class="alert alert-info alert-dismissable" style="display: none;">
             <button type="button" class="close" id="ok-close" aria-hidden="true">&times;</button>
             <h4><i class="icon fa fa-info"></i> Login Success!</h4>

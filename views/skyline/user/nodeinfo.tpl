@@ -1,24 +1,26 @@
 {include file='user/main.tpl'}
 
-<div class="content-wrapper">
-    <section class="content-header">
+<div class="container" style="margin-top: 50px;">
+    <div class="page-header">
         <h1>
             节点列表
             <small>Node List</small>
         </h1>
-    </section>
+    </div>
+
     <!-- Main content -->
-    <section class="content">
         <!-- START PROGRESS BARS -->
         <div class="row">
-            <div class="col-md-6">
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-code"></i>
-                        <h3 class="box-title">Config file</h3>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="callout callout-warning">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-hourglass"  style="font-size: 20px;"></span>
+                        <h3 style="display: inline;">                        
+                            Config file
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-info alert-dismissable">
                             <h4>注意!</h4>
                             <p>配置文件以及二维码请勿泄露！</p>
                         </div>
@@ -28,16 +30,30 @@
                     </code>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-qrcode"  style="font-size: 20px;"></span>
+                        <h3 style="display: inline;">                        
+                            二维码地址
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p style="text-align: center;">{$ssqr}</p>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+
             </div><!-- /.col (right) -->
 
-            <div class="col-md-6">
-                <div class="box box-solid">
-                    <div class="box-header">
-                        <i class="fa fa-code"></i>
-                        <h3 class="box-title">二维码</h3>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <p>{$ssqr}</p>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="glyphicon glyphicon-qrcode"  style="font-size: 20px;"></span>
+                        <h3 style="display: inline;">                        
+                            二维码
+                        </h3>
+                    </div>
+                    <div class="panel-body">
                         <div align="center">
                             <div id="qrcode"></div>
                         </div>
@@ -54,6 +70,5 @@
 
         </div><!-- /.row -->
         <!-- END PROGRESS BARS -->
-    </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 {include file='user/footer.tpl'}

@@ -1,27 +1,22 @@
 {include file='user/main.tpl'}
 
-<div class="content-wrapper">
+<div class="container" style="margin-top: 50px;">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <div class="page-header">
             <h1>
                 信息更新
                 <small>Profile Update</small>
             </h1>
-        </section>
+        </div>
 
         <!-- Main content -->
-        <section class="content">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-6">
                     <!-- general form elements -->
-                    <div class="box box-primary">
-                        <div class="box-header">
-                            <h3 class="box-title">网站登录密码修改</h3>
-                        </div><!-- /.box-header -->
-                        <!-- form start -->
-
-                        <div class="box-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3 style="display: inline;">网站登录密码修改</h3></div>
+                            <div class="panel-body">
 
                             <div id="msg-error" class="alert alert-warning alert-dismissable" style="display:none">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -47,22 +42,18 @@
                                 <input type="password" placeholder="确认密码" class="form-control" id="repwd">
                             </div>
 
+                            <p>
+                                <button type="submit" id="pwd-update" class="btn btn-primary">修改</button>
+                            </p>
                         </div><!-- /.box-body -->
-
-                        <div class="box-footer">
-                            <button type="submit" id="pwd-update" class="btn btn-primary">修改</button>
-                        </div>
 
                     </div><!-- /.box -->
                 </div>
 
                 <div class="col-md-6">
-                    <div class="box box-solid">
-                        <div class="box-header">
-                            <i class="fa fa-align-left"></i>
-                            <h3 class="box-title">Shadowsocks连接密码修改</h3>
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3 style="display: inline;">Shadowsocks 链接密码修改</h3></div>
+                            <div class="panel-body">
 
                             <div id="ss-msg-success" class="alert alert-info alert-dismissable" style="display:none" >
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -76,16 +67,15 @@
                                 <input type="text" id="sspwd" placeholder="输入新密码" class="form-control"  >
                             </div>
 
-                            <div class="box-footer">
+                            <p>
                                 <button type="submit" id="ss-pwd-update" class="btn btn-primary"  >修改 </button>
-                            </div>
+                            </p>
 
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->
 
             </div>
-        </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
     <script>
