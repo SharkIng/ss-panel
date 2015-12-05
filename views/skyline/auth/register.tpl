@@ -61,10 +61,6 @@
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 
-
-
-
-
 <!-- Invitation Code Google Form -->
 <div class="modal fade" id="Code" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -77,7 +73,6 @@
       <div class="modal-body center" style="color:black;text-align:center;padding-left:10%;padding-right:10%;color:#3b3b3b">
         <div class="row center">
             <iframe src="https://docs.google.com/forms/d/15GhjPijX8ZFGNruyS7VBUFxJTEk-Grw4WEWaa2GHQNE/viewform?embedded=true" width="500" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
         </div>
       </div>
       <div class="modal-footer">
