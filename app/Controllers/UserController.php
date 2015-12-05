@@ -29,6 +29,11 @@ class UserController extends BaseController
         return $this->view()->display('user/index.tpl');
     }
 
+    public function donation()
+    {
+        return $this->view()->display('user/donation.tpl');
+    }
+
     public function node(){
         $nodes = Node::all();
         return $this->view()->assign('nodes',$nodes)->display('user/node.tpl');
