@@ -1,3 +1,42 @@
+## Talk about this version
+
+### Added functions
+* Stripe Payment/Donation. (Only for Skyline theme right now.)
+
+### Added themes
+* Skyline Theme.
+
+### Working on. / To-Do
+* Radius VPN intergration.
+* Others?
+
+### How two
+
+#### How to use Stripe payment
+1. You need edit/change the Stripe public key in ./public/assets/public/js/stripe.js
+2. Add your Stripe secret key in ./config/app.php
+
+* Submit issue if there is any errors or bugs.
+* Payment will not return any message now. 
+* Payment will not deal with any user database information YET. (I will add this once Orvice finish this entire project)
+
+#### How to use Skyline theme
+1. Change theme setting in ./config/app.php
+2. Do whatever you need to modify this theme.
+3. PLEASE, PLEASE, PLEASE! Download the movie or edit it in ./views/skyline/index.tpl
+
+* This theme require a movie for index. 
+* This theme is currently for my personal uses ONLY and may have multiple bugs.
+
+* movie download: [Current Movie](https://copy.com/web/users/user-2154040/copy/Movies/bg.mp4) OR Change to your own movie.
+
+
+### Thanks
+1. This is a [SS-Panel](https://github.com/orvice/ss-panel) fork. Main function are implemented by [Orvice](https://github.com/orvice/ss-panel)
+2. Skyline Theme is made of Inspiration/"Copied" from [VL](https://vnet.link).
+
+----
+
 # ss-panel
 
 Let's talk about cat.  Base on [LightFish](https://github.com/OzCat/LightFish)
@@ -62,4 +101,4 @@ location / {
     try_files $uri $uri/ /index.php$is_args$args;
 }
     
-```    
+``` 

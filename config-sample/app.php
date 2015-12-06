@@ -33,6 +33,7 @@ return [
 
     // Stripe Secret Key
     'stripeKey' => '',
+    'stripePubKey' => '', 
 
     'version'  => '3.0.0 Beta',
 ];

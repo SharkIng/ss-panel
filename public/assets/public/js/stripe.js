@@ -1,7 +1,9 @@
 var amount;
 
+var pubKey;
+
 var handler = StripeCheckout.configure({
-	key: '',
+	key: pubKey,
 	token: function(token) {
 		$("#stripeToken").val(token.id);
 		$("#stripeEmail").val(token.email);
@@ -39,6 +41,7 @@ var handler = StripeCheckout.configure({
 
 $('#input_submit').on('click', function(e) {
 	amount = $("#amount").val() * 100;
+	pubKey = $("#stripePubKey").val();
 	// Open Checkout with further options
 	
 	handler.open({

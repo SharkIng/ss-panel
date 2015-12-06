@@ -33,6 +33,7 @@
                 <div class="input-group">
                     <span class="input-group-addon">$</span>
                         <input type="text" class="form-control has-success" id="amount" name="amount" onkeyup="on_change(this.value);" onchange="on_change(this.value);">
+                        <input type="hidden" id="stripePubKey" name="stripePubKey" value={$config['stripePubKey']}/>
                         <input type="hidden" id="stripeToken" name="stripeToken"/>
                         <input type="hidden" id="stripeEmail" name="stripeEmail"/>
                         <input type="hidden" id="stripeAmount" name="stripeAmount"/>
