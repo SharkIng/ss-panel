@@ -31,6 +31,8 @@ return [
     // 注册后获得的邀请码数量
     'inviteNum' => 5,
 
+    // Stripe Secret Key
+    'stripeKey' => '',
 
     'version'  => '3.0.0 Beta',
 ];

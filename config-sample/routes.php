@@ -31,6 +31,8 @@ $app->group('/user', function () {
     $this->get('/sys', 'App\Controllers\UserController:sys');
     $this->get('/test', 'App\Controllers\UserController:test');
     $this->get('/logout', 'App\Controllers\UserController:logout');
+    $this->get('/donation', 'App\Controllers\UserController:donation');
+    $this->post('/donation', 'App\Controllers\UserController:doDonation');
 })->add(new Auth());
 
 // Auth

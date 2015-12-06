@@ -1,14 +1,44 @@
+var amount;
+
 var handler = StripeCheckout.configure({
-	key: 'pk_test_55qsM1PZ5USDOOUeDhdv1GVF',
+	key: '',
 	token: function(token) {
 		$("#stripeToken").val(token.id);
 		$("#stripeEmail").val(token.email);
-		$(".input-group").submit();
+		$("#stripeAmount").val(amount);
+		$("#donationForm").submit();
+
+		// function(){
+		// 	$.ajax({
+		// 	        url: "donation",
+		// 	        type: "POST",
+		// 	        dataType:"json",
+		//                     data:{
+		//                         amount: $("#amount").val() * 100,
+		//                         stripeToken: token.id,
+		// 		stripeEmail: token.email
+		//                     },
+		//                     success:function(data){
+		//                         if(data.ret){
+		//                             $("#msg-success").show();
+		//                             $("#msg-success-p").html(data.msg);
+		//                         }else{
+		//                             $("#msg-error").show();
+		//                             $("#msg-error-p").html(data.msg);
+		//                         }
+		//                     },
+		//                     error:function(jqXHR){
+		//                         alert("发生错误："+jqXHR.status);
+		//                     }
+		// 	 }); // end ajax call
+
+		// }
+
 	}
 });
 
 $('#input_submit').on('click', function(e) {
-	var amount = $("#input_to").val() * 100;
+	amount = $("#amount").val() * 100;
 	// Open Checkout with further options
 	
 	handler.open({

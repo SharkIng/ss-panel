@@ -10,6 +10,8 @@ use App\Services\Config;
 use App\Utils\Hash;
 use App\Utils\Tools;
 
+use App\Services\StripePayment;
+
 
 /**
  *  HomeController
@@ -31,7 +33,8 @@ class UserController extends BaseController
 
     public function donation()
     {
-        return $this->view()->display('user/donation.tpl');
+        $paid = 'false';
+        return $this->view()->assign('paid', $paid)->display('user/donation.tpl');
     }
 
     public function node(){
@@ -153,5 +156,20 @@ class UserController extends BaseController
         return $response->getBody()->write(json_encode($res));
     }
 
+    public function doDonation($request, $response, $args){
+        $token =  $request->getParam('stripeToken');
+        $amount = $request->getParam('amount') * 100;
+        $email = $request->getParam('stripeEmail');
+
+        $charge = StripePayment::charge($token, $email, $amount);
+
+        // $error = json_decode($charge);
+        // $status = $error['status'];
+
+        $paid = 'true';
+        // $res['ret'] = 1;
+        // return $response->getBody()->write(json_encode($res));
+        return $this->view()->assign('paid', $paid)->display('user/donation.tpl');
+    }
 
 }

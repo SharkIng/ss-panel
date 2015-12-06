@@ -61,7 +61,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="tooltip" data-placement="auto" title="支付">
+                            <a href="/user/donation" data-toggle="tooltip" data-placement="auto" title="支付">
                                 <span class="glyphicon glyphicon-shopping-cart"  style="font-size: 25px;"></span>
                             </a>
                         </li>
