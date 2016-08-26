@@ -3880,7 +3880,6 @@
             "time": "2016-04-12 18:09:53"
         },
         {
-<<<<<<< HEAD
             "name": "stripe/stripe-php",
             "version": "v3.5.0",
             "source": {
@@ -3936,12 +3935,8 @@
             "time": "2015-12-02 00:11:27"
         },
         {
-            "name": "symfony/event-dispatcher",
-            "version": "v2.7.5",
-=======
             "name": "symfony/finder",
             "version": "v3.1.0",
->>>>>>> upstream/master
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
