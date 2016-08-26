@@ -2,42 +2,74 @@
 
 namespace App\Services;
 
-use App\Services\Auth\Cookie;
-use App\Services\Auth\Redis;
-use App\Services\Auth\File;
+use App\Models\User;
+use App\Services\Cache\Cache;
+use App\Services\Cache\Factory;
+use App\Utils\Cookie;
+use App\Utils\Helper;
+use App\Utils\Tools;
 
 class Auth
 {
-   protected  $driver;
+    protected $driver;
 
-   public function __construct(){
+    protected $cache;
 
-   }
+    public function __construct()
+    {
 
-   public static  function getDriver(){
+    }
 
-       $method = Config::get('authDriver');
+    /**
+     * @return Cache
+     */
+    protected static function getCache()
+    {
+        return Factory::newSessionCache();
+    }
+    
+    public static function login($uid, $time)
+    {
+        $sid = Tools::genSID();
+        Cookie::set([
+            'sid' => $sid
+        ], $time + time());
+        $key = $sid;
+        $value = $uid;
+        self::getCache()->set($key, $value, $time);
+    }
 
-       switch($method){
-           case 'cookie':
-               return new Cookie();
-               break;
-           case 'redis':
-               return new Redis();
-               break;
-       }
-       return null;
-   }
+    /**
+     * @return User|void
+     */
+    public static function getUser()
+    {
+        if (Helper::isTesting()) {
+            $user = User::first();
+            $user->isLogin = true;
+            return $user;
+        }
+        $sid = Cookie::get('sid');
+        $value = self::getCache()->get($sid);
+        if ($value == null || !$value) {
+            $user = new User();
+            $user->isLogin = false;
+            return $user;
+        }
+        $uid = $value;
+        $user = User::find($uid);
+        if ($user == null) {
+            $user = new User();
+            $user->isLogin = false;
+            return $user;
+        }
+        $user->isLogin = true;
+        return $user;
+    }
 
-   public static function login($uid,$time){
-       self::getDriver()->login($uid,$time);
-   }
-
-   public static function getUser(){
-       return self::getDriver()->getUser();
-   }
-
-   public static function logout(){
-       self::getDriver()->logout();
-   }
+    public static function logout()
+    {
+        $sid = Cookie::get('sid');
+        self::getCache()->del($sid);
+    }
 }

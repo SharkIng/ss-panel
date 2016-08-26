@@ -2,39 +2,59 @@
 
 namespace App\Controllers;
 
-use Smarty;
-
 use App\Services\Auth;
+use App\Services\View;
 
 /**
  * BaseController
  */
-
 class BaseController
 {
 
-    public $view;
+    protected $view;
 
-    public $smarty;
+    protected $smarty;
 
-    public function construct__(){
+    protected $app;
 
+
+    /**
+     * @return \Smarty
+     */
+    public function smarty()
+    {
+        $this->smarty = View::getSmarty();
+        return $this->smarty;
     }
 
-    public function smarty(){
-        global $config;
-        $smarty=new smarty(); //实例化smarty
-        $smarty->settemplatedir(BASE_PATH.'/views/'.$config['theme'].'/'); //设置模板文件存放目录
-        $smarty->setcompiledir(BASE_PATH.'/storage/framework/smarty/compile/'); //设置生成文件存放目录
-        $smarty->setcachedir(BASE_PATH.'/storage/framework/smarty/cache/'); //设置缓存文件存放目录
-        // add config
-        $smarty->assign('config',$config);
-        $smarty->assign('user',Auth::getUser());
-        $this->smarty = $smarty;
-        return $smarty;
-    }
-
-    public function view(){
+    /**
+     * @return \Smarty
+     */
+    public function view()
+    {
         return $this->smarty();
+    }
+
+    /**
+     * @param $response
+     * @param $res
+     * @param int $statusCode
+     * @return mixed
+     */
+    public function echoJson($response, $res, $statusCode = 200)
+    {
+        $newResponse = $response->withJson($res, $statusCode);
+        return $newResponse;
+    }
+
+    /**
+     * @param $response
+     * @param $to
+     * @return mixed
+     */
+    public function redirect($response, $to)
+    {
+        $newResponse = $response->withStatus(302)->withHeader('Location', $to);
+        return $newResponse;
     }
 }

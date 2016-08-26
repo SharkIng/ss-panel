@@ -17,7 +17,7 @@
 2. Add your Stripe secret key in ./config/app.php
 
 * Submit issue if there is any errors or bugs.
-* Payment will not return any message now. 
+* Payment will not return any message now.
 * Payment will not deal with any user database information YET. (I will add this once Orvice finish this entire project)
 
 #### How to use Skyline theme
@@ -25,7 +25,7 @@
 2. Do whatever you need to modify this theme.
 3. PLEASE, PLEASE, PLEASE! Download the movie or edit it in ./views/skyline/index.tpl
 
-* This theme require a movie for index. 
+* This theme require a movie for index.
 * This theme is currently for my personal uses ONLY and may have multiple bugs.
 
 * movie download: [Current Movie](https://copy.com/web/users/user-2154040/copy/Movies/bg.mp4) OR Change to your own movie.
@@ -39,25 +39,26 @@
 
 # ss-panel
 
-Let's talk about cat.  Base on [LightFish](https://github.com/OzCat/LightFish)
+Let's talk about cat.  Based on [LightFish](https://github.com/Pongtan/LightFish).
 
-[![Join the chat at https://gitter.im/orvice/ss-panel](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orvice/ss-panel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[安装文档](https://sspanel.xyz/docs)
 
-[Releases](https://plus.google.com/communities/112308980947577664041) |[Follow on Trello](https://trello.com/b/dr62AtYI/ss-panel) | [Google+](https://plus.google.com/communities/112308980947577664041)
+[![Build Status](https://travis-ci.org/orvice/ss-panel.svg?branch=master)](https://travis-ci.org/orvice/ss-panel) [![Coverage Status](https://coveralls.io/repos/github/orvice/ss-panel/badge.svg?branch=master)](https://coveralls.io/github/orvice/ss-panel?branch=master) [![Join the chat at https://gitter.im/orvice/ss-panel](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orvice/ss-panel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## About
 
-v3未完成，请查看[v2](https://github.com/orvice/ss-panel/tree/v2)
-
 Please visit [releases pages](https://github.com/orvice/ss-panel/releases) to download ss-panel.
-
-[中文安装教程](https://github.com/orvice/ss-panel/wiki/v3-Install)
 
 ## Requirements
 
-* PHP 5.5 or newer
+* PHP 5.6 or newer
 * Web server with URL rewriting
 * MySQL
+
+## Supported Server
+
+* [shadowsocks manyuser](https://github.com/mengskysama/shadowsocks/tree/manyuser)
+* [shadowsocks-go mu](https://github.com/orvice/shadowsocks-go)
 
 
 ## Install
@@ -78,10 +79,14 @@ $ php composer.phar  install
 ### Step 2
 
 ```
-cp config-sample config
+cp .env.example .env
 ```
 
-Then edit config file under config dir.
+then edit .env
+
+```
+chmod -R 777 storage
+```
 
 ### Step 3
 
@@ -101,4 +106,8 @@ location / {
     try_files $uri $uri/ /index.php$is_args$args;
 }
     
-``` 
+```
+
+### Step 5 Config
+
+view config guide on [wiki](https://github.com/orvice/ss-panel/wiki/v3-Config)
